@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import { useRecoilValue } from 'recoil'
+import { modalState } from '../atoms/modalAtom'
 import Banner from '../components/banner'
 import Header from '../components/header'
+import Modal from '../components/modal'
 import Row from '../components/row'
 import useAuth from '../hooks/useAuth'
 import { Movie } from '../typings'
@@ -28,6 +31,8 @@ const Home = ({
   trendingNow,
 }: Props) => {
 
+  const showModal = useRecoilValue(modalState)
+
   const { loading } = useAuth()
   if (loading) return null
 
@@ -52,6 +57,7 @@ const Home = ({
         </section>
       </main>
       {/* Modal */}
+      {showModal && <Modal />}
     </div>
   )
 }
