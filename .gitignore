@@ -36,3 +36,9 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+.idea/.gitignore
+.idea/modules.xml
+.idea/netflix-clone.iml
+.idea/vcs.xml
+package-lock.json
+yarn.lock
